@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const postSchema = mongoose.Schema({
+const PostSchema = mongoose.Schema({
   title: {
     type: String,
     required: true
@@ -11,8 +11,8 @@ const postSchema = mongoose.Schema({
   },
   date: {
     type: Date,
-    description: Date.now
+    default: Date.now
   }
 });
 
-module.exports = mongoose.model("Posts", postSchema);
+module.exports = mongoose.model("Posts", PostSchema);

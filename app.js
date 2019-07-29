@@ -2,10 +2,12 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const bodyOarse = require("body-parser");
+const cors = require("cors");
 require("dotenv/config");
 
 const postsRoute = require("./routes/posts");
 
+app.use(cors());
 app.use(bodyOarse.json());
 app.use("/posts", postsRoute);
 
